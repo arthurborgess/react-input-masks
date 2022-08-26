@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, GlobalStyle } from "./App.styles";
+import { CnpjInput } from "./components/CnpjInput";
+import { CpfInput } from "./components/CpfInput";
+import { InputCurrency } from "./components/MaskedInput";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Container>
+        <label htmlFor="currency">Currency input</label>
+        <InputCurrency id="currency" />
+        <label htmlFor="cpf">CPF input</label>
+        <CpfInput id="cpf" />
+        <label htmlFor="cnpj">CNPJ input</label>
+        <CnpjInput id="cnpj" />
+      </Container>
+    </>
   );
-}
-
-export default App;
+};
