@@ -1,5 +1,6 @@
 {
   "name": "input-mask",
+  "homepage": "https://arthur.github.io/react-input-masks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
