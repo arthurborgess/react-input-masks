@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export const InputCurrency = ({ id }: { id: string }) => {
+export const CurrencyInput = ({ id }: { id: string }) => {
     const [value, setValue] = useState('');
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -23,9 +23,6 @@ export const InputCurrency = ({ id }: { id: string }) => {
             value={value}
             onChange={handleChange}
             placeholder="R$ 0,00"
-            name="moneyInput"
-            autoComplete="off"
-            required
             autoFocus
         />
     );

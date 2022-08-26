@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const CnpjInput = ({ id }: { id: string }) => {
     const [value, setValue] = useState('');
 
-    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-        event.preventDefault();
-        let currentValue = event.target.value.replace(/[^0-9]/g, '');
-        setValue(cnpjFormat(currentValue));
-    }
     function cnpjFormat(value: string): string {
         return value
             .replace(/\D/g, '')
@@ -23,7 +18,7 @@ export const CnpjInput = ({ id }: { id: string }) => {
             id={id}
             type="tel"
             value={value}
-            onChange={handleChange}
+            onChange={e => setValue(cnpjFormat(e.target.value))}
             placeholder="00.000.000/0000-00"
         />
     );
